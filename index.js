@@ -26,7 +26,7 @@ app.get('/api', function (req, res) {
 });
 
 
-
+/*
 
 var options = {
     'method': 'POST',
@@ -85,7 +85,7 @@ var req = https.request(options, function (res) {
 
 req.end();
 
-/*
+*/
 const options = {
     hostname: 'jsonplaceholder.typicode.com',
     path: '/todos/1',
@@ -110,4 +110,3 @@ req.on('error', e => {
 });
 req.end();
 
-*/
