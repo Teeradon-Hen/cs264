@@ -27,7 +27,7 @@ app.get('/api', function (req, res) {
 
 
 
-/*
+
 var options = {
     'method': 'POST',
     'hostname': 'restapi.tu.ac.th',
@@ -55,7 +55,7 @@ var req = https.request(options, function (res) {
     });
 });
 
-*/
+
 var options = {
     'method': 'GET',
     'hostname': 'restapi.tu.ac.th',
