@@ -19,7 +19,7 @@ app.listen(PORT, function () {
     console.log(`Listening on ${PORT}`)
 });
 
-
+res.send(resultFromRequest);
 var resultFromRequest ; 
 
 app.get('/api', function (req, res) {
