@@ -19,7 +19,7 @@ app.listen(PORT, function () {
     console.log(`Listening on ${PORT}`)
 });
 
-res.send(resultFromRequest);
+
 var resultFromRequest ; 
 
 app.get('/api', function (req, res) {
@@ -82,6 +82,7 @@ var options = {
     
         res.on("error", function (error) {
             console.error(error);
+         res.send(resultFromRequest);
         });
     });
     
