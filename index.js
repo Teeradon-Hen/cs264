@@ -65,7 +65,7 @@ app.post('/api', function (req, res) {
               console.error(error);
           });
       });
-      var postData =  "{\n\t\"UserName\":\""+stuID+"\",\n\t\"PassWord\":\""+pass+"\"\n}";
+      var postData =  "{\n\t\"UserName\":\"{"+stuID+"}\",\n\t\"PassWord\":\"{"+pass+"}\"\n}";
       req.write(postData);
       req.end();
       res.send(resultFromRequest);
