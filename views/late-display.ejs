@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<title>TIME UP</title>
+<head>
+<style>
+body {
+  background-image: url('image/tu-park1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover; 
+}
+.Header{
+    background-color: #ffb366  ;
+    height:120px;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;   
+}
+.logo-pos{
+    position: absolute;
+    left: 30px;
+    top: 10px;
+   
+}
+.logout-pos{
+  padding-top: 40px;
+  padding-left: 89%;
+}
+.logout{
+  width:  100px;
+  height: 45px;
+  background-color: #429885;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.logout:active{
+  background-color:  #287061;
+  transform: translateY(3px);
+}
+
+.menubar{
+  background-color:#63666A  ;
+  width:8% ;
+  height:100% ;
+  left: 0px;
+  top: 10px;
+  padding-top: 120px;
+  position: fixed;
+}
+.topic{
+  background-color:rgb(215, 228, 233);
+  width:  100px;
+  height: 45px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 14px;
+  color: #535b53;
+  cursor: pointer;
+  
+}
+.topic:active{
+  background-color:  #7d8dd8;
+  transform: translateY(3px);
+}
+.wel{
+  padding-top: 120px;
+  padding-left: 10%;
+}
+.stuImg{
+  padding-right: 10%;
+  padding-top: 10%;
+  width:12%;   
+  height:30%;
+  right: 0px;
+  top: 0px;
+  position: fixed;
+}
+</style>
+</head>
+<body >
+  <div class="menubar">
+    <center>
+     <form action = '/lateRegis' method = 'GET' style="padding-top: 10px"> <button class = 'topic' type="submit">จดทะเบียนล่าช้า</button><br><br><br></form>
+     <form action = ''style="padding-top: 10px" > <button class = 'topic'type="submit" >ถอนรายวิชา(W)</button><br><br><br></form>
+     <form action = '' style="padding-top: 10px"> <button class = 'topic'type="submit" >ลาออก</button>  <br><br><br></form>
+     <form action = '' style="padding-top: 10px">  <button class = 'topic' type="submit"  >อื่นๆ </button><br><br><br></form>
+      <span>
+        <a href= "https://login1-1.herokuapp.com/">
+          <button class = 'logout'  >Logout</button>
+        </a>
+      </span>
+   </center>
+  </div>
+  <div class="container" > 
+    <div class = "Header" >    
+      <div class = "logo-pos" >
+        <img src = 'image/tu-logo.PNG' width= "70%" height="70%" > 
+      </div>  
+         
+    </div>
+
+    
+     <div class = 'wel'>
+       
+      <h2 ><%=  username %> : <%=  nameTH %></h2>
+  
+       <center>
+          <div style="padding-top: 7%" >
+            <img src= 'image/clock.png' width= "20%" height="20%" >
+            <h3 >หมดเวลาเเล้วเธอคงต้องไป </h3>
+          </div>
+
+       </center>
+       
+     </div>
+
+   
+ 
+
+    </div>
+
+</body>
+</html>

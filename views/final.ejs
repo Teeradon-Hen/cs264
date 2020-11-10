@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html>
+<title>กรอกรายวิชาที่ลงทะเบียนและบอกเหตุผลของการลงทะเบียนล่าช้า</title>
+<head>
+<style>
+body {
+  background-image: url('image/tu-park1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover; 
+}
+.Header{
+    background-color: #ffb366  ;
+    height:120px;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;   
+}
+.logo-pos{
+    position: absolute;
+    left: 30px;
+    top: 10px;
+   
+}
+.logout-pos{
+  padding-top: 40px;
+  padding-left: 89%;
+}
+.logout{
+  width:  100px;
+  height: 45px;
+  background-color: #429885;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.logout:active{
+  background-color:  #287061;
+  transform: translateY(3px);
+}
+
+.menubar{
+  background-color:#63666A  ;
+  width:8% ;
+  height:100% ;
+  left: 0px;
+  top: 10px;
+  padding-top: 120px;
+  position: fixed;
+}
+.topic{
+  background-color:rgb(215, 228, 233);
+  width:  100px;
+  height: 45px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 14px;
+  color: #535b53;
+  cursor: pointer;
+  
+}
+.topic:active{
+  background-color:  #7d8dd8;
+  transform: translateY(3px);
+}
+.wel{
+  padding-top: 120px;
+  padding-left: 10%;
+}
+.stuImg{
+  padding-right: 10%;
+  padding-top: 10%;
+  width:12%;   
+  height:30%;
+  right: 0px;
+  top: 0px;
+  position: fixed;
+}
+.Form{
+  font-size: 20px;
+  padding-left: 5%;
+  font-family:sans-serif;
+  font-weight:600;
+}
+.select1{
+  width:  60px;
+  height: 30px;
+}
+.select2{
+  width:  200px;
+  height: 30px;
+}
+button{
+  background-color:#535b53;
+  width:  80px;
+  height: 45px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color:   rgb(215, 228, 233);
+  cursor: pointer;
+ 
+}
+</style>
+</head>
+<body >
+  <div class="menubar">
+    <center>
+     <form action = '/lateRegis' method = 'GET' style="padding-top: 10px"> <button class = 'topic' type="submit">จดทะเบียนล่าช้า</button><br><br><br></form>
+     <form action = ''style="padding-top: 10px" > <button class = 'topic'type="submit" >ถอนรายวิชา(W)</button><br><br><br></form>
+     <form action = '' style="padding-top: 10px"> <button class = 'topic'type="submit" >ลาออก</button>  <br><br><br></form>
+     <form action = '' style="padding-top: 10px">  <button class = 'topic' type="submit"  >อื่นๆ </button><br><br><br></form>
+     <span>
+      <a href= "https://login1-2.herokuapp.com/">
+        <button class = 'logout' >Logout</button>
+      </a>
+    </span>
+   </center>
+  </div>
+  <div class="container" > 
+    <div class = "Header" >    
+      <div class = "logo-pos" >
+        <img src = 'image/tu-logo.PNG' width= "70%" height="70%" > 
+      </div>  
+         
+    </div>
+
+    
+     <div class = 'wel'>
+       
+       <h2 >กรอกรายวิชาที่ลงทะเบียนและบอกเหตุผลของการลงทะเบียนล่าช้า</h2>
+       <form class = 'Form' action = '/checksub' method = 'POST'>
+        <label for="reason">เหตุผลของการลงทะเบียนล่าช้า : </label> 
+          <select class='select2' name="reason" id="reason">
+            <option  value="ปัญหาด้านการเงิน" required>ปัญหาด้านการเงิน</option>
+            <option  value="ปัญหาด้านสุขภาพ"required>ปัญหาด้านสุขภาพ</option>
+            <option  value="เดินทางไปต่างประเทศ"required>เดินทางไปต่างประเทศ</option>             
+          </select><br><br>
+        <label for="noSub">จำนวนวิชาที่ต้องการลงทะเบียน : </label> 
+          <select class='select1' name="noSub" id="noSub">
+            <option  value="1" required>1</option>
+            <option  value="2"required>2</option>
+            <option  value="3"required>3</option>
+            <option  value="4"required>4</option>
+            <option  value="5"required>5</option>
+            <option  value="6"required>6</option> 
+            <option  value="7"required>7</option>      
+            <option  value="5"required>8</option>
+            <option  value="6"required>9</option> 
+            <option  value="7"required>10</option>        
+          </select><br><br>
+        <label for="sub">ระบุรายวิชาและsection </label> <br><br>
+        <textarea id="sub" name="sub"  rows= '10'  cols='50' ;>
+ตัวอย่าง
+1.CS264 SEC100001
+2.CS213 SEC050001
+        </textarea>  <br><br>
+        <div style=" padding-left: 25%" >
+          <div class="next" >
+            <button type = 'submit' >ส่ง</button>
+          </div>
+        </div> 
+       </form>
+       <img class= 'stuImg' src = 'https://web.reg.tu.ac.th/registrar/getstudentimage.asp?id=<%=username%>&amp;Status=10' >
+     </div>
+
+   
+ 
+
+    </div>
+
+</body>
+</html>
