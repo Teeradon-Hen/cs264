@@ -5,9 +5,9 @@
 
 <!DOCTYPE html>
 <html>
-<title>Home</title>
+<title>ข้อมูลนักศึกษา</title>
 <head>
->
+
 <style>
 body {
   background-image: url('image/tu-park1.jpg');
@@ -31,7 +31,7 @@ body {
 }
 .Form{
   font-size: 20px;
-  padding-left: 10%;
+  padding-left: 6%;
   font-family:sans-serif;
   font-weight:600;
 }
@@ -117,7 +117,8 @@ body {
 }
 .wel{
   top: 120px;
-  left: 10%;
+  left: 180px;
+  width: 80%;
   position: fixed;
   
 }
@@ -133,8 +134,6 @@ body {
           <a href = '/Home'  >หน้าหลัก </a>  
           <a  href = '/info' >เเสดงข้อมูล</a> 
           <div style="border: #ff1010;"><a href = "/noti" >เเจ้งสถานะคำร้อง</a>
-          </div>
-          
         </center> 
       </div>  
       <div style="padding-top: 20px">
@@ -146,16 +145,44 @@ body {
           </span>
         </center>
       </div>
-  
+    
           
    
    
     <div class = 'wel'>
  
-      <h2 style=" font-weight: bold;" >ยินดีต้อนรับเข้าสู่ระบบ....</h2>
+      <h2 style=" font-weight: bold;" >ข้อมูลของ <%=  nameTH %></h2>
  
      
+      <div class= 'Form'>   
       
+
+
+         
+        <label id="nameTH"> ชื่อ-สกุล :   <%=  nameTH %></label> <br>
+        <label id="username">รหัสนักศึกษา :   <%=  username %></label> <br>
+        <label id="stuYear">ปี :  <%=  stuYear %></label>   <br>
+        <label id="faculty">คณะ : <%=  faculty %></label> <br>
+        <label id="department">สาขา :  <%=  department %></label> <br>
+        <label id="email">Email :  <%=  email %> </label> <br>
+        <label id="address">ที่อยู่ :  <%=  address %></label><br>
+        <label id="stuTel">เบอร์โทรศัพท์นักศึกษา :  <%=  stuTel %></label><br>     
+        <label id="parentTel">เบอร์โทรศัพท์ผู้ปกครอง : <%=  parentTel %> </label><br>
+        <label id="teacher">อาจารย์ที่ปรึกษา : <%=  teacher %></label> <br>
+        <label id="reason">สาเหตุ :  <%=  reason %></label> <br>
+        <label id="link">เอกสารเเนบ :  </label>
+        <label id="TotalCredit">จำนวนหน่วยกิตรวม :  <%=  TotalCredit %> หน่วยกิต</label> <br>
+        <label id="noSub">จำนวนวิชา :  <%=  noSub %> วิชา</label> <br>
+        <label id="teacher">วิชา  :  </label> <br>
+        <div style = 'padding-left: 15px;'></div>
+          <label id="teacher"><%=  sub1 %></label> <br>
+          <label id="teacher"><%=  sub2 %></label> <br>
+          <label id="teacher"><%=  sub3 %></label> <br>
+          <label id="teacher"><%=  sub4 %></label> <br>
+          <label id="teacher"><%=  sub5 %></label> <br>
+        </div>
+     
+    </div>
    
  
     </div>
@@ -168,17 +195,18 @@ body {
   <div class="container" > 
     <div class = "Header" >    
       <div class = "logo-pos" >
-        <img src = 'image/tu-logo.PNG' width= "70%" height="70%" > 
+        <a href="/noti">
+           <img src = 'image/tu-logo.PNG' width= "70%" height="70%" > 
+        </a>
       </div>  
     </div>
   </div>
   <center>
-    <div class='Img' >
-      <img  style = 'border-radius: 70%' src='https://web.reg.tu.ac.th/registrar/getstudentimage.asp?id=<%=username%>&amp;Status=10' width = '240px'  height="240px" alt="image" >
-   
-        
-    </div>
-   </center>
+  <div class='Img' >
+    <img  style = 'border-radius: 70%' src='https://web.reg.tu.ac.th/registrar/getstudentimage.asp?id=<%=username%>&amp;Status=10' width = '240px'  height="240px" alt="image" >
  
+      
+  </div>
+ </center>
 </body>
 </html>                                    
