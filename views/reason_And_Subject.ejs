@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<title>กรอกรายวิชาที่ลงทะเบียนและบอกเหตุผลของการลงทะเบียนล่าช้า</title>
+<head>
+<style>
+body {
+  background-image: url('image/tu-park1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover; 
+}
+.Header{
+    background-color: #ffb366  ;
+    height:120px;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;   
+}
+.logo-pos{
+    position: absolute;
+    left: 30px;
+    top: 10px;
+   
+}
+
+.logout{
+  width:  100px;
+  height: 45px;
+  background-color: #429885;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.logout:active{
+  background-color:  #287061;
+  transform: translateY(3px);
+}
+
+.menubar{
+  background-color:#63666A  ;
+  width:140px ;
+  height:100% ;
+  left: 0px;
+  top: 10px;
+  padding-top: 110px;
+  position: fixed;
+}
+.vertical-menu {
+  width: 140px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+.wel{
+  padding-top: 120px;
+  padding-left: 10%;
+}
+.stuImg{
+  padding-right: 10%;
+  padding-top: 10%;
+  width:12%;   
+  height:30%;
+  right: 0px;
+  top: 0px;
+  position: fixed;
+}
+.Form{
+  font-size: 20px;
+  padding-left: 5%;
+  font-family:sans-serif;
+  font-weight:600;
+}
+.select1{
+  width:  60px;
+  height: 30px;
+}
+.select2{
+  width:  200px;
+  height: 30px;
+}
+button{
+  background-color:#535b53;
+  width:  80px;
+  height: 45px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color:   rgb(215, 228, 233);
+  cursor: pointer;
+ 
+}
+input{
+  height: 35px;
+  width: 400px;
+}
+</style>
+</head>
+<body >
+  <div class="menubar">      
+    <div class="vertical-menu "> 
+    <a href = '/lateRegis'  >จดทะเบียนล่าช้า </a>  
+    <a href = '' >ถอนรายวิชา(W)</a> 
+    <a href = '' >ลาออก  </a> 
+    <a href = ''  >อื่นๆ </a>
+    </div>
+      
+     
+    <center>
+      <div style="padding-top: 20px">
+        
+        <span >
+          <a href= "https://login1-2.herokuapp.com/">
+            <button class = 'logout' >Logout</button>
+          </a>
+        </span>
+      </div>
+    </center>
+  </div>
+  <div class="container" > 
+    <div class = "Header" >    
+      <div class = "logo-pos" >
+        <img src = 'image/tu-logo.PNG' width= "70%" height="70%" > 
+      </div>  
+         
+    </div>
+
+    
+     <div class = 'wel'>
+       <h1 style="color: crimson" ><%=warnn%></h1>
+       <h2 >กรอกรายวิชาที่ลงทะเบียนและบอกเหตุผลของการลงทะเบียนล่าช้า</h2>
+       <form class = 'Form' action = '/checksub' method = 'POST'>
+        <label for="reason">เหตุผลของการลงทะเบียนล่าช้า : กรอก 1.ปัญหาด้านการเงิน 2.ปัญหาด้านสุขภาพ </label ><br> <br> 
+        <label > <u>กรณีอื่นๆให้กรอกเหตุผล</u> <br>
+          <div style="padding-top: 20px">
+              <input  type="text" placeholder="1 , 2 หรือ เหตุผล...." name="reason" required>
+          </div>
+        </label> <br> 
+    
+        <label for="sub">ระบุรายวิชา หน่วยกิต และsection  </label> <br><br> 
+        <label for="sub">กรอกในรูปแบบ (SUBJECT1/SEC1/CREDIT1 ; SUBJECT2/SEC2/CREDIT2 )  </label> <br><br>
+        <textarea id="sub" name="sub"  rows= '10'  cols='50' placeholder="SUBJECT1/SEC1/CREDIT1 ;
+SUBJECT2/SEC2/CREDIT2
+มี ; คั่นเเต่ละวิชา
+เช่น cs264/100001/3;00000/000000/0"></textarea>  <br><br>
+        <div style=" padding-left: 25%" >
+          <div class="next" >
+            <button type = 'submit' >ส่ง</button>
+          </div>
+        </div> 
+       </form>
+       <img class= 'stuImg' src = 'https://web.reg.tu.ac.th/registrar/getstudentimage.asp?id=<%=username%>&amp;Status=10' >
+     </div>
+
+   
+ 
+
+    </div>
+
+</body>
+</html>

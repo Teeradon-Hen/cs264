@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<title>ตรวจสอบความถูกต้อง</title>
+<head>
+<style>
+body {
+  background-image: url('image/tu-park1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover; 
+}
+.Header{
+    background-color: #ffb366  ;
+    height:120px;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;   
+}
+.logo-pos{
+    position: absolute;
+    left: 30px;
+    top: 10px;
+   
+}
+.logout-pos{
+  padding-top: 40px;
+  padding-left: 89%;
+}
+.logout{
+  width:  100px;
+  height: 45px;
+  background-color: #429885;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.logout:active{
+  background-color:  #287061;
+  transform: translateY(3px);
+}
+
+.menubar{
+  background-color:#63666A  ;
+  width:140px ;
+  height:100% ;
+  left: 0px;
+  top: 10px;
+  padding-top: 110px;
+  position: fixed;
+}
+.vertical-menu {
+  width: 140px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+.wel{
+  padding-top: 120px;
+  padding-left: 10%;
+}
+.stuImg{
+  padding-right: 10%;
+  padding-top: 10%;
+  width:12%;   
+  height:30%;
+  right: 0px;
+  top: 0px;
+  position: fixed;
+}
+.Form{
+  font-size: 20px;
+  padding-left: 5%;
+  font-family:sans-serif;
+  font-weight:600;
+}
+.select1{
+  width:  60px;
+  height: 30px;
+}
+.select2{
+  width:  200px;
+  height: 30px;
+}
+.button1{
+  background-color:#80ba3b;
+  width:  80px;
+  height: 45px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color:   rgb(215, 228, 233);
+  cursor: pointer;
+  
+}
+.button2{
+  background-color:#993333;
+  width:  80px;
+  height: 45px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color:   rgb(215, 228, 233);
+  cursor: pointer;
+  
+}
+</style>
+
+</head>
+<body >
+  <div class="menubar">      
+    <div class="vertical-menu "> 
+    <a href = '/lateRegis'  >จดทะเบียนล่าช้า </a>  
+    <a href = '' >ถอนรายวิชา(W)</a> 
+    <a href = '' >ลาออก  </a> 
+    <a href = ''  >อื่นๆ </a>
+    </div>
+      
+     
+    <center>
+      <div style="padding-top: 20px">
+        
+        <span >
+          <a href= "https://login1-2.herokuapp.com/">
+            <button class = 'logout' >Logout</button>
+          </a>
+        </span>
+      </div>
+    </center>
+  </div>
+  <div class="container" > 
+    <div class = "Header" >    
+      <div class = "logo-pos" >
+        <img src = 'image/tu-logo.PNG' width= "70%" height="70%" > 
+      </div>  
+         
+    </div>
+
+    
+     <div class = 'wel'>
+       
+       <h2 >ตรวจสอบความถูกต้อง</h2>
+       <div class = 'Form' >
+        <label for="reason">เหตุผลของการลงทะเบียนล่าช้า :  <%=  reason %></label> <br><br>
+        
+        <label for="noSub">จำนวนวิชาที่ต้องการลงทะเบียน : <%=  totalsub %> วิชา</label> <br><br>
+        <label for="TotalCredit">จำนวนหน่วยกิตรวมทั้งหมด : <%=  TotalCredit %> หน่วยกิต</label> <br><br>
+        <label for="sub">รายวิชาและsectionที่ลงทะเบียน :  </label> <br>
+        <div style = 'padding-left: 5%' >
+        
+          <label for="sub" > <%=  subarr0 %>    </label> <br>
+          <label for="sub" > <%=  subarr1 %>    </label> <br>
+          <label for="sub" > <%=  subarr2 %>    </label> <br>
+          <label for="sub" > <%=  subarr3 %>    </label> <br>
+          <label for="sub" > <%=  subarr4 %>    </label> <br>
+          <label for="sub" > <%=  subarr5 %>    </label> <br>
+          <label for="sub" > <%=  subarr6 %>    </label> <br>
+          <label for="sub" > <%=  subarr7 %>    </label> <br>
+          <label for="sub" > <%=  subarr8 %>    </label> <br>
+          <label for="sub" > <%=  subarr9 %>    </label> <br>   
+        </div> 
+        <div style=" padding-left: 25%" >
+          <div class="next" >
+            <form  action = '/final' method = 'GET' >
+              <button class='button2' type = 'submit' >เเก้ไข</button><br><br>
+            </form>
+          </div>
+          <div class="next" >
+            <form  action = '/end' method = 'GET' >
+              <button class='button1' type = 'submit' >ส่ง</button> </div>
+            </form>
+          </div>
+          
+        </div>  
+      </div>
+       <img class= 'stuImg' src = 'https://web.reg.tu.ac.th/registrar/getstudentimage.asp?id=<%=username%>&amp;Status=10' >
+     </div>
+
+   
+ 
+
+    </div>
+
+</body>
+</html>

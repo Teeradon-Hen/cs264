@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html>
+<title>ตรวจสอบข้อมูล</title>
+<head>
+<style>
+body {
+  background-image: url('image/tu-park1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover; 
+}
+.Header{
+    background-color: #ffb366  ;
+    height:120px;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;   
+}
+.logo-pos{
+    position: absolute;
+    left: 30px;
+    top: 10px;
+   
+}
+.logout-pos{
+  padding-top: 40px;
+  padding-left: 89%;
+}
+.logout{
+  width:  100px;
+  height: 45px;
+  background-color: #429885;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+.logout:active{
+  background-color:  #287061;
+  transform: translateY(3px);
+}
+.warning{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:rgb(240, 54, 113);
+  padding-bottom: 10px;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.menubar{
+  background-color:#63666A  ;
+  width:140px ;
+  height:100% ;
+  left: 0px;
+  top: 10px;
+  padding-top: 110px;
+  position: fixed;
+}
+.vertical-menu {
+  width: 140px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+.wel{
+  padding-top: 120px;
+  padding-left: 10%;
+}
+.Form{
+  font-size: 20px;
+  padding-left: 5%;
+  font-family:sans-serif;
+  font-weight:600;
+}
+option{
+  padding-left: 10%;
+  width: 10%;
+  height: 10%;
+  background-color:rgb(215, 228, 233)  ;
+}
+.button1{
+  background-color:#80ba3b;
+  width:  80px;
+  height: 45px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color:   rgb(215, 228, 233);
+  cursor: pointer;
+  
+}
+.button2{
+  background-color:#993333;
+  width:  80px;
+  height: 45px;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color:   rgb(215, 228, 233);
+  cursor: pointer;
+  
+}
+select{
+  width:  60px;
+  height: 30px;
+}
+.box1{
+  height: 25px;
+  width: 60% ;
+}
+.box2{ 
+  height: 25px;
+  width: 20% ;
+}
+.next:hover:active{
+  opacity: 0.7;
+  transform: translateY(5px);
+}
+.stuImg{
+  padding-right: 10%;
+  padding-top: 10%;
+  width:12%;   
+  height:30%;
+  right: 0px;
+  top: 0px;
+  position: fixed;
+}
+.next:hover:active{
+  opacity: 0.7;
+  transform: translateY(5px);
+}
+</style>
+</head>
+<body >
+  <div class="menubar">      
+    <div class="vertical-menu "> 
+    <a href = '/lateRegis'  >จดทะเบียนล่าช้า </a>  
+    <a href = '' >ถอนรายวิชา(W)</a> 
+    <a href = '' >ลาออก  </a> 
+    <a href = ''  >อื่นๆ </a>
+    </div>
+      
+     
+    <center>
+      <div style="padding-top: 20px">
+        
+        <span >
+          <a href= "https://login1-2.herokuapp.com/">
+            <button class = 'logout' >Logout</button>
+          </a>
+        </span>
+      </div>
+    </center>
+  </div>
+  <div class = "Header" >    
+    <div class = "logo-pos" >
+      <img src = 'image/tu-logo.PNG' width= "70%" height="70%" > 
+    </div>  
+     
+      
+  </div>
+
+      
+  <div class = 'wel'>
+    <h2 > จดทะเบียนล่าช้า - ตรวจสอบข้อมูล</h2>
+    
+      
+    <div class="container" >
+      <div class = "section-content" >
+          <div class= 'Form'>      
+            <label for="nameTH"> ชื่อ-สกุล :  <%=  nameTH %> </label> <br><br>
+            <label for="username">รหัสนักศึกษา : <%=  username %> </label> <br><br>
+            <label for="stuYear">ปี : <%=  stuYear %></label>   <br><br>
+            <label for="faculty">คณะ : <%=  faculty %></label> <br><br>
+            <label for="department">สาขา :<%= department  %></label> <br><br>
+            <label for="email">Email : <%=  email %> </label> <br><br>
+            <label for="address">ที่อยู่ : <%=  address %></label><br><br>
+           
+            <label for="stuTel">เบอร์โทรศัพท์นักศึกษา : <%=  stuTel %></label><br><br>
+            
+            <label for="parentTel">เบอร์โทรศัพท์ผู้ปกครอง : <%=  parentTel %></label><br><br>
+            <label for="teacher">อาจารย์ที่ปรึกษา : <%=  teacher %></label> <br><br>
+            
+            
+            <div style=" padding-left: 25%" >
+              <div class = 'row' >
+                <div class="col-sm-3" >
+                  <div class="next" >
+                    <form  action = '/lateRegis' method = 'GET' >
+                      <button class='button2' type = 'submit' >เเก้ไข</button><br><br>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-sm-3" >
+                  <div class="next" >
+                    <form  action = '/reason' method = 'GET' >
+                      <button class='button1' type = 'submit' >ส่ง</button> </div>
+                    </form>
+                  </div>
+                </div>
+
+
+              </div>
+              
+              
+              
+            </div>  
+            
+          
+          
+   
+        
+            <img class= 'stuImg' src = 'https://web.reg.tu.ac.th/registrar/getstudentimage.asp?id=<%=username%>&amp;Status=10' >
+        
+
+
+
+                
+          </div>
+      </div>
+      
+      
+    </div>
+  
+  
+
+
+</body>
+</html>
