@@ -1,0 +1,184 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<title>ผลสถานะ</title>
+<head>
+>
+<style>
+body {
+  background-image: url('image/tu-park1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover; 
+}
+.Header{
+    background-color: #ffb366  ;
+    height:120px;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;   
+}
+.logo-pos{
+    position: absolute;
+    left: 30px;
+    top: 10px;
+   
+}
+.Form{
+  font-size: 20px;
+  padding-left: 10%;
+  font-family:sans-serif;
+  font-weight:600;
+}
+.menubar{
+  background-color:#63666A  ;
+  width:140px ;
+  height:100% ;
+  left: 0px;
+  top: 10px;
+  padding-top: 110px;
+  position: fixed;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.vertical-menu {
+  width: 140px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.logout-pos{
+  padding-top: 40px;
+  padding-left: 89%;
+}
+.logout{
+  width:  100px;
+  height: 45px;
+  background-color: #429885;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.accept{
+  width:  100px;
+  height: 45px;
+  background-color: #12a83f;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.reject{
+  width:  100px;
+  height: 45px;
+  background-color: #ff1010;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.logout:active{
+  background-color:  #287061;
+  transform: translateY(3px);
+}
+
+.Img{
+  padding-top: 150px;
+  width:12%;   
+  height:30%;
+  right: 300px;
+  top: 0px;
+  position: fixed;
+  
+}
+.wel{
+  top: 120px;
+  left: 600px;
+  position: fixed;
+  
+}
+
+</style>
+<body>
+  <div class="menubar">   
+
+      
+
+      <div class="vertical-menu "> 
+        <center> 
+          <a href = '/Home'  >หน้าหลัก </a>  
+          <a style="border: #ff1010;" href = '/info' >เเสดงข้อมูล</a> 
+          <a href = "/noti" >เเจ้งสถานะคำร้อง</a>
+        </center> 
+      </div>  
+      <div style="padding-top: 20px">
+        <center>  
+          <span >
+              <a href= "https://www.youtube.com/" >
+                <button class = 'logout'  >   Logout</button>
+              </a>  
+          </span>
+        </center>
+      </div>
+  
+          
+   
+  
+   
+ 
+    </div>
+  
+    
+    
+
+   
+  </div>
+  <div class="container" > 
+    <div class = "Header" >    
+      <div class = "logo-pos" >
+        <img src = 'image/tu-logo.PNG' width= "70%" height="70%" > 
+      </div>  
+    </div>
+     
+    <div class = 'wel'>
+      <center> 
+      <h2 style=" padding-top: 15%;font-weight: bold;font-size: 40px;" ><%=noti%></h2>
+      <h2 style=" padding-top: 15%;font-weight: bold;" ><%=reasonReject%></h2>
+    </center>
+     
+      
+  </div>
+  <center>
+    <div class='Img' >
+      <img  style = 'border-radius: 70%' src='https://web.reg.tu.ac.th/registrar/getstudentimage.asp?id=<%=username%>&amp;Status=10' width = '240px'  height="240px" alt="image" >
+   
+        
+    </div>
+   </center>
+ 
+</body>
+</html>                                    
